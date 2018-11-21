@@ -1,0 +1,38 @@
+void Login()
+{
+	Teachers T;
+	char x[30],id[30];
+	int check,pass;
+	ifstream adm;
+	adm.open("E:\\Work\\University\\CP\\Project\\Employment.txt",ios::app);
+	adm.seekg(0,adm.beg);
+	system("CLS");
+	while(strcmp(id,x)!=0)
+	{
+		cout<<"\t\t\t\tEnter Teacher's Id"<<endl<<"\t\t\t\t";
+		scanf("%[^\n]s",id);
+		system("CLS");
+		while(strcmp(id,x)!=0)
+		{
+			adm.getline(x,30);
+			if(adm.eof())
+			{
+				cout<<"\t\t\t\tNo Such User Exist"<<endl;
+				adm.seekg(0,adm.beg);
+				break;
+			}
+		}
+	}
+	adm>>check;
+	cout<<"\t\t\t\tEnter Password"<<endl<<"\t\t\t\t";
+	cin>>pass;
+	system("CLS");
+	while(pass!=check)
+		{
+			cout<<"\t\t\t\tIncorrect Password"<<endl;
+			cout<<"\t\t\t\tEnter Password Again"<<endl<<"\t\t\t\t";
+			cin>>pass;
+			system("CLS");
+		}
+		adm.close();
+}

@@ -1,0 +1,56 @@
+class Check_Student_Info:public Student,public Menu{
+	private:
+		int x;
+		char data[200];
+		Student st;
+		Menu m;
+	public:	
+		char Upper_Case(char men){
+			if(men<=122 && men>=97){
+				men=men-32;
+			}
+			return men;
+		}
+		void New_Admission(){
+			system ("color 74");
+			system("CLS");
+			cout<<"\n\n\n\n\n\n\t\t\t\tEnter General Information"<<endl;
+			st.Admission();
+		}
+		void Check_Info(){
+			system ("color 74");
+			system("CLS");
+			m.Info();
+		}
+		void Student_Info(){
+			system ("color 74");
+			system("CLS");
+			m.Student_Info();
+		}
+		void display_GI(){
+			ifstream adm;
+			adm.open(st.name,ios::app);
+			system ("color 74");
+			system("CLS");
+			adm.seekg(0,adm.beg);
+	 		adm.getline(data,200);
+			cout<<"\n\n\t\t\t\t"<<data<<endl;
+			adm.getline(data,200);
+			cout<<"\t\t\t\tName\t\t"<<data<<endl;
+			adm.getline(data,200);
+			cout<<"\t\t\t\tRoll NO.\t\t\t"<<data<<endl;
+			adm.getline(data,200);
+			cout<<"\t\t\t\tSection\t\t\t\t"<<data<<endl;
+			adm.getline(data,200);
+			cout<<"\t\t\t\tClass\t\t\t\t"<<data<<endl;
+			adm.close();
+		}
+		void General_Information(){
+			system ("color 74");
+			system("CLS");
+			st.getname();
+			st.txt();
+			display_GI();
+			getch();
+		}
+};

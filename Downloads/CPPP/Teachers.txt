@@ -1,0 +1,119 @@
+class Teachers:public Menu{
+	  private:
+	  	Menu m;
+	  	char FN[30],SN[30],data[200];
+	  	char type[100],sec[20];
+	  	int salary,cls,pass;
+	  	public:
+		void getname(){
+ 		 	cout<<"\n\n\n\n\n\n";
+			cout<<"\t\t\t\tEnter First Name"<<endl<<"\t\t\t\t";
+			cin>>FN;
+			cout<<"\t\t\t\tEnter Second Name"<<endl<<"\t\t\t\t";
+			cin>>SN;
+			strcat(FN," ");
+			strcat(FN,SN);
+			txt();
+		}
+		void gettype(){
+			cout<<"\t\t\t\tEnter Job Type"<<endl<<"\t\t\t\t";
+			cin>>type;}
+		void txt(){
+			strcpy(SN,"E:\\Work\\University\\CP\\Project\\Employment\\");
+			strcat(SN,FN);
+			strcat(SN,".txt");
+		}
+		void getcls()
+		{
+			cout<<"\t\t\t\tEnter Class"<<endl<<"\t\t\t\t";
+			cin>>cls;
+		}
+		void getsalary(){
+			 cout<<"\t\t\t\tEnter Salary"<<endl<<"\t\t\t\t";
+			 cin>>salary;
+		}
+		void getsec(){
+			cout<<"\t\t\t\tEnter Section"<<endl<<"\t\t\t\t";
+			cin>>sec;
+		}
+		void getpassword(){
+			 cout<<"\t\t\t\tEnter Password"<<endl<<"\t\t\t\t";
+			 cin>>pass;
+		}
+		void Teacher(char key){
+			system ("color 74");
+			 system("CLS");
+			 if(key=='T'){
+			 		getname();
+			 		getpassword();
+			 		getsec();
+					getcls();
+					getsalary();
+					ofstream adm,tec;
+					tec.open("Employment.txt",ios::app);
+					tec<<FN<<endl;
+					tec<<pass<<endl;
+					adm.open(SN,ios::app);
+					adm<<FN<<endl;
+					adm<<sec<<endl;
+					adm<<cls<<endl;
+					adm<<salary<<endl;
+					tec.close();
+					adm.close();
+			 }
+			 if(key=='D'){
+		  	 		getname();
+		  	 		getpassword();
+					gettype();
+					getsalary();
+					ofstream adm,tec;
+					tec.open("Employment.txt",ios::app);
+					adm.open(SN,ios::app);
+					getch();
+					adm<<FN<<endl;
+					adm<<type<<endl;
+					adm<<salary<<endl;
+					tec.close();
+					adm.close();
+			 }
+		}
+		void Employment(){
+			system ("color 74");
+			 system("CLS");
+	   		 m.New_Employment();
+		}
+		
+		void display_Employment(char key){
+			 system ("color 74");
+			 system("CLS");
+			 getname();
+			 ifstream adm;
+			 adm.open(SN,ios::app);
+			 system ("color 74");
+			 system("CLS");
+			 cout<<"\n\n\n\n\n\n";
+			 if(key=='T'){
+				 adm.seekg(0,adm.beg);
+				 adm.getline(data,200);
+				 cout<<"\t\t\t\tName\t\t\t\t"<<data<<endl;
+				 adm.getline(data,200);
+				 cout<<"\t\t\t\tSection\t\t\t\t"<<data<<endl;
+				 adm.getline(data,200);
+				 cout<<"\t\t\t\tClass\t\t\t\t"<<data<<endl;
+				 adm.getline(data,200);
+				 cout<<"\t\t\t\tSalary\t\t\t\t"<<data<<endl;
+	  			 adm.close();
+	  			 getch();
+			 }
+			 if(key=='D'){
+			 	adm.seekg(0,adm.beg);
+			 	adm.getline(data,200);
+	 		 	cout<<"\t\t\t\tName\t\t\t\t"<<data<<endl;
+			 	adm.getline(data,200);
+				cout<<"\t\t\t\tType\t\t\t\t"<<data<<endl;
+			 	adm.getline(data,200);
+				cout<<"\t\t\t\tSalary\t\t\t\t"<<data<<endl;
+				getch();
+			 }
+		}
+};

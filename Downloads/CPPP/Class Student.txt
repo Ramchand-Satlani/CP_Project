@@ -1,0 +1,56 @@
+class Student{
+	public:
+		char n[30],name[100];
+		string RN,sec;
+		int fees,cls,YOA;
+		void getname(){
+			cout<<"\t\t\t\tEnter First Name"<<endl<<"\t\t\t\t";
+			cin>>n;
+			cout<<"\t\t\t\tEnter Second Name"<<endl<<"\t\t\t\t";
+			cin>>name;
+			strcat(n," ");
+			strcat(n,name);
+		}
+		void getRN(){
+			cout<<"\t\t\t\tEnter Roll Number"<<endl<<"\t\t\t\t";
+			cin>>RN;
+		}
+		void getsec(){
+			cout<<"\t\t\t\tEnter Section"<<endl<<"\t\t\t\t";
+			cin>>sec;
+		}
+		void getcls()
+		{
+			cout<<"\t\t\t\tEnter Class"<<endl<<"\t\t\t\t";
+			cin>>cls;
+		}
+		void getfees(){
+			 cout<<"\t\t\t\tEnter Fees"<<endl<<"\t\t\t\t";
+			 cin>>fees;
+		}
+ 		void Admission(){
+			getname();
+			txt();
+			ofstream adm;
+			//std.open("E:\\Work\\University\\CP\\Project\\Students\\Students",ios::app);
+			adm.open(name,ios::app);
+			getRN();
+			getsec();
+			getcls();
+			getfees();
+			adm<<"General Information"<<endl;
+			adm<<n<<endl;
+			//std<<n<<endl;
+			adm<<RN<<endl;
+			adm<<sec<<endl;
+			adm<<cls<<endl;
+			adm<<fees<<endl;
+			//std.close();
+			adm.close();
+		}
+		void txt(){
+			strcpy(name,"E:\\Work\\University\\CP\\Project\\Students\\");
+			strcat(name,n);
+			strcat(name,".txt");
+		}
+};

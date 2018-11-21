@@ -1,0 +1,74 @@
+class Results:public Student,public Menu{
+	public:
+		Student st;
+		Menu m;
+		int total[2],marks[10][2],i,j;
+		char course[10][15],data[100];
+	public:	
+		void Course_Names(){
+			system ("color 74");
+			system("CLS");
+			cout<<"\n\n\n\n\n\n\t\t\t\tEnter Number Of Courses"<<endl<<"\t\t\t\t";
+			cin>>i;
+			system ("color 74");	
+			system("CLS");
+			cout<<"\n\n\n\n\n\nt\t\t\tEnter Courses Names"<<endl<<"\t\t";
+			for(j=0;j<i;j++){
+				cout<<"\t\t\t\t";
+				cin>>course[j];
+			}
+		}
+		
+		void Marks_Entry(){
+			system ("color 74");
+			system("CLS");
+			cout<<"\n\n\n\n\n\n";
+			for(j=0;j<i;j++){
+				cout<<"\t\t\t\tEnter Marks of "<<course[j]<<endl<<"\t\t";
+				cin>>marks[j][1];
+				cout<<marks[j][1]<<" Out Of "<<"\t\t";
+				cin>>marks[j][2];
+			}
+		}
+		
+		void Calculation(){
+			for(j=0;j<i;j++){
+				total[1]+=marks[j][1];
+				total[2]+=marks[j][2];
+			}
+		}
+		void Enter_Result(){
+			system("CLS");
+			st.getname();
+			st.txt();
+			Course_Names();
+			Marks_Entry();
+			Calculation();
+			ofstream adm;
+			adm.open(st.name,ios::app);
+			adm<<"Result"<<endl;
+			adm<<"Courses\t\tObtained Marks\tOutOff"<<endl;
+			for(j=0;j<i;j++){
+				adm<<course[j]<<"\t\t"<<marks[j][1]<<"\t\t"<<marks[j][2]<<endl;
+			}
+			adm<<"\nTotal\t"<<total[1]<<"\t"<<total[2]<<endl;
+			adm.close();
+			getch();
+		}
+		
+		void display_Result(){
+			system("CLS");
+			st.getname();
+			st.txt();
+			ifstream adm;
+			adm.open(st.name,ios::app);
+			for(i=0;i<=5;i++){
+				adm.getline(data,100);
+			}
+			for(j=0;j<i;j++){
+				adm.getline(data,100);
+				cout<<data<<endl;
+			}
+			getch();
+		}
+};

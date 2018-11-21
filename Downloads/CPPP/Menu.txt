@@ -1,0 +1,41 @@
+class Menu{
+	private:
+		string key;
+		public:
+		void Main_Menu(){
+			system ("color 74");
+			system("cls");
+			cout<<"\n\n\n\n\n\n";
+			cout<<"\t\t\t\tN\tNew Admission"<<endl;
+			cout<<"\t\t\t\tL\tNew Employment"<<endl;
+			cout<<"\t\t\t\tC\tCheck Info"<<endl;
+			cout<<"\t\t\t\tR\tEnter Results"<<endl;
+			//cout<<"A\tAccounts"<<endl;
+			cout<<"\t\t\t\tE\tExit"<<endl<<"\t\t\t\t";
+		}
+		void Info(){
+			cout<<"\n\n\n\n\n\n";
+			cout<<"\t\t\t\tS\tStudents"<<endl;
+			cout<<"\t\t\t\tT\tTeachers"<<endl;
+			cout<<"\t\t\t\tD\tStaff"<<endl;
+			cout<<"\t\t\t\tM\tMain Menu"<<endl;
+			cout<<"\t\t\t\tE\tExit"<<endl<<"\t\t\t\t";
+		}
+		void Student_Info(){
+			cout<<"\n\n\n\n\n\n";
+			cout<<"\t\t\t\tG\tGeneral Information"<<endl;
+			cout<<"\t\t\t\tR\tResult"<<endl;
+			cout<<"\t\t\t\tM\tMain Menu"<<endl;
+			cout<<"\t\t\t\tE\tExit"<<endl<<"\t\t\t\t";
+		}
+		void New_Employment(){
+			 cout<<"\n\n\n\n\n\n";
+			 cout<<"\t\t\t\t\tT\tTeacher"<<endl;
+			 cout<<"\t\t\t\t\tD\tStaff"<<endl;
+			 cout<<"\t\t\t\t\tM\tMain Menu"<<endl;
+			 cout<<"\t\t\t\t\tE\tExit"<<endl;
+		}
+		/*void Accounts(){
+			cout<<""<<endl;
+		}*/
+};
